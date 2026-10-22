@@ -1,0 +1,77 @@
+name: Build e Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            target: mac
+          - os: windows-latest
+            target: win
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run dist:${{ matrix.target }}
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: fakehacking-${{ matrix.target }}
+          path: |
+            release/FakeHacking-*.dmg
+            release/FakeHacking-*.exe
+          if-no-files-found: error
+
+  release:
+    name: Pubblica la Release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          path: out
+          merge-multiple: true
+      - name: Crea la Release con i file
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > notes.md <<'NOTES'
+          ## Scarica
+
+          | Sistema | File |
+          |---|---|
+          | Mac con chip Apple (M1, M2, M3, M4…) | `FakeHacking-*-mac-arm64.dmg` |
+          | Mac con Intel | `FakeHacking-*-mac-x64.dmg` |
+          | Windows, senza installare | `FakeHacking-*-windows-portable.exe` |
+          | Windows, con installazione | `FakeHacking-*-windows-setup.exe` |
+
+          **Primo avvio su Mac:** l'app non è firmata da Apple. Se dice che è danneggiata o di uno sviluppatore non identificato, trascinala in Applicazioni e lancia nel Terminale `xattr -cr /Applications/FakeHacking.app`, poi aprila.
+
+          **Primo avvio su Windows:** se compare "Windows ha protetto il PC", clicca *Ulteriori informazioni* › *Esegui comunque*.
+
+          È tutto finto: l'app non usa la rete e non legge niente del tuo computer.
+          NOTES
+          gh release create "$GITHUB_REF_NAME" out/* \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "FakeHacking $GITHUB_REF_NAME" \
+            --notes-file notes.md

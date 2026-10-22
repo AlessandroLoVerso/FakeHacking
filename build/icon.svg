@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2d3a"/>
+      <stop offset="1" stop-color="#14151c"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a3d4d"/>
+      <stop offset="1" stop-color="#0b0c10"/>
+    </linearGradient>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="none" stroke="#007acc" stroke-width="10" opacity="0.9"/>
+  <rect x="100" y="100" width="824" height="70" rx="0" fill="#000" opacity="0"/>
+  <circle cx="190" cy="185" r="20" fill="#ff5f57"/>
+  <circle cx="250" cy="185" r="20" fill="#febc2e"/>
+  <circle cx="310" cy="185" r="20" fill="#28c840"/>
+  <!-- occhiali da sole -->
+  <path d="M250 330 H470 Q480 330 478 345 L462 450 Q455 490 410 490 H320 Q270 490 262 450 L242 345 Q240 330 250 330 Z" fill="url(#lens)" stroke="#000" stroke-width="10"/>
+  <path d="M554 330 H774 Q784 330 782 345 L762 450 Q755 490 710 490 H620 Q570 490 562 450 L546 345 Q544 330 554 330 Z" fill="url(#lens)" stroke="#000" stroke-width="10"/>
+  <path d="M470 352 Q512 330 554 352" fill="none" stroke="#000" stroke-width="22" stroke-linecap="round"/>
+  <path d="M285 350 L330 350 L290 420 Z" fill="#ffffff" opacity="0.18"/>
+  <path d="M589 350 L634 350 L594 420 Z" fill="#ffffff" opacity="0.18"/>
+  <!-- prompt >_ -->
+  <path d="M300 600 L420 680 L300 760" fill="none" stroke="#4ec9b0" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="470" y="725" width="230" height="44" rx="10" fill="#4ec9b0"/>
+</svg>

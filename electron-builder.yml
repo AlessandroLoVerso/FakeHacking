@@ -1,0 +1,36 @@
+appId: com.alessandroloverso.fakehacking
+productName: FakeHacking
+copyright: "Tutto finto © Alessandro Lo Verso"
+directories:
+  output: release
+  buildResources: build
+files:
+  - dist/**
+  - electron/**
+  - package.json
+asar: true
+mac:
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+  category: public.app-category.entertainment
+  icon: build/icon.png
+  identity: "-"
+  hardenedRuntime: false
+  artifactName: "${productName}-${version}-mac-${arch}.${ext}"
+dmg:
+  title: "FakeHacking ${version}"
+win:
+  target:
+    - target: portable
+      arch: [x64]
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.png
+portable:
+  artifactName: "${productName}-${version}-windows-portable.${ext}"
+nsis:
+  artifactName: "${productName}-${version}-windows-setup.${ext}"
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+publish: null
