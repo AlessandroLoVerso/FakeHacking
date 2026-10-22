@@ -33,7 +33,7 @@ export function defaultSettings(): Settings {
   };
 }
 
-function sanitize(raw: unknown): Settings {
+export function sanitize(raw: unknown): Settings {
   const base = defaultSettings();
   if (!raw || typeof raw !== 'object') return base;
   const r = raw as Partial<Settings>;
