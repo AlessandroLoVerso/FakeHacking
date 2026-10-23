@@ -35,8 +35,8 @@ jobs:
         with:
           name: fakehacking-${{ matrix.target }}
           path: |
-            release/FakeHacking-*.dmg
-            release/FakeHacking-*.exe
+            release/Hacking-*.dmg
+            release/Hacking-*.exe
           if-no-files-found: error
 
   release:
@@ -60,12 +60,12 @@ jobs:
 
           | Sistema | File |
           |---|---|
-          | Mac con chip Apple (M1, M2, M3, M4…) | `FakeHacking-*-mac-arm64.dmg` |
-          | Mac con Intel | `FakeHacking-*-mac-x64.dmg` |
-          | Windows, senza installare | `FakeHacking-*-windows-portable.exe` |
-          | Windows, con installazione | `FakeHacking-*-windows-setup.exe` |
+          | Mac con chip Apple (M1, M2, M3, M4…) | `Hacking-*-mac-arm64.dmg` |
+          | Mac con Intel | `Hacking-*-mac-x64.dmg` |
+          | Windows, senza installare | `Hacking-*-windows-portable.exe` |
+          | Windows, con installazione | `Hacking-*-windows-setup.exe` |
 
-          **Primo avvio su Mac:** l'app non è firmata da Apple. Se dice che è danneggiata o di uno sviluppatore non identificato, trascinala in Applicazioni e lancia nel Terminale `xattr -cr /Applications/FakeHacking.app`, poi aprila.
+          **Primo avvio su Mac:** l'app non è firmata da Apple. Se dice che è danneggiata o di uno sviluppatore non identificato, trascinala in Applicazioni e lancia nel Terminale `xattr -cr /Applications/Hacking.app`, poi aprila.
 
           **Primo avvio su Windows:** se compare "Windows ha protetto il PC", clicca *Ulteriori informazioni* › *Esegui comunque*.
 
@@ -73,5 +73,5 @@ jobs:
           NOTES
           gh release create "$GITHUB_REF_NAME" out/* \
             --repo "$GITHUB_REPOSITORY" \
-            --title "FakeHacking $GITHUB_REF_NAME" \
+            --title "Hacking $GITHUB_REF_NAME" \
             --notes-file notes.md

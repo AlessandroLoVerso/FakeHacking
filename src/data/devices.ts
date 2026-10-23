@@ -101,7 +101,7 @@ export const DEVICE_TYPES: Record<DeviceType, TypeInfo> = {
     steps: [
       'Salto il tutorial',
       'Scarico un aggiornamento da 87 GB (per sbaglio)',
-      'Cancello i salvataggi… scherzo, non sono un mostro',
+      'Cancello i salvataggi… no dai, non sono un mostro',
     ],
     loot: () => [
       ['Gioco più giocato', 'FIFA'],

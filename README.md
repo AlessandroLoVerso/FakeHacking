@@ -11,20 +11,21 @@ Serve per farsi due risate, fare scherzi agli amici o girare scene da film.
 
 ## Scarica
 
-Vai su **[Releases](https://github.com/AlessandroLoVerso/FakeHacking/releases/latest)** e scegli il file giusto:
+Vai su **[Releases](https://github.com/AlessandroLoVerso/FakeHacking/releases/latest)** e scegli il file giusto.
+Una volta installata, l'app si chiama **Hacking**: a schermo non compare mai la parola "fake", così la scena regge.
 
 | Sistema | File |
 |---|---|
-| Mac con chip Apple (M1, M2, M3, M4…) | `FakeHacking-…-mac-arm64.dmg` |
-| Mac con Intel | `FakeHacking-…-mac-x64.dmg` |
-| Windows, senza installare niente | `FakeHacking-…-windows-portable.exe` |
-| Windows, con installazione | `FakeHacking-…-windows-setup.exe` |
+| Mac con chip Apple (M1, M2, M3, M4…) | `Hacking-…-mac-arm64.dmg` |
+| Mac con Intel | `Hacking-…-mac-x64.dmg` |
+| Windows, senza installare niente | `Hacking-…-windows-portable.exe` |
+| Windows, con installazione | `Hacking-…-windows-setup.exe` |
 
 **Primo avvio su Mac.** L'app non è firmata da Apple (costa 99 $ l'anno). Trascinala in Applicazioni.
 Se macOS dice che è danneggiata o che lo sviluppatore non è identificato, apri il Terminale e lancia:
 
 ```bash
-xattr -cr /Applications/FakeHacking.app
+xattr -cr /Applications/Hacking.app
 ```
 
 Poi aprila normalmente.

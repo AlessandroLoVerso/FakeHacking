@@ -258,7 +258,7 @@ export function clearOverlays() {
 
 // --- Notifiche --------------------------------------------------------------
 
-export function toast(msg: string, tone: Tone = 'info', source = 'FakeHacking', ms = 5000) {
+export function toast(msg: string, tone: Tone = 'info', source = 'Mainframe', ms = 5000) {
   const box = document.getElementById('toasts')!;
   const icons: Record<Tone, string> = { ok: 'pass', info: 'info', warn: 'warning', err: 'error' };
   const t = el('div', `toast ${tone}`, `${icon(icons[tone])}<div class="msg">${escapeHtml(msg)}<span class="src">Fonte: ${escapeHtml(source)}</span></div>${icon('close')}`);

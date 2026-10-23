@@ -1,8 +1,8 @@
 {
   "name": "fakehacking",
-  "productName": "FakeHacking",
-  "version": "1.0.0",
-  "description": "Postazione hacker finta da film, in stile VS Code. Tutto simulato, tutto divertente.",
+  "productName": "Hacking",
+  "version": "1.0.1",
+  "description": "Postazione hacker da film in stile VS Code.",
   "author": "Alessandro Lo Verso",
   "license": "MIT",
   "private": true,
