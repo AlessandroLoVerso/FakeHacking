@@ -60,7 +60,7 @@ export const DOWNLOAD_FILES = [
   'foto_imbarazzanti_gita_2008.rar',
   'password_wifi_vicino.txt',
   'tesi_DEFINITIVA_v9_FINALE.docx',
-  'codici_nucleari_(finti).xls',
+  'codici_nucleari.xls',
   'meme_rarissimi.7z',
   'playlist_karaoke.m3u',
   'lista_regali_natale.csv',

@@ -356,7 +356,7 @@ async function download(run: Run) {
       row,
       p: 0,
       size: rand(0.3, 40),
-      speed: pick(['999 TB/s', '3 piccioni/s', '12 GB/s', '56 kb/s… scherzo, 80 GB/s', '1 floppy/ms', 'più veloce della luce']),
+      speed: pick(['999 TB/s', '3 piccioni/s', '12 GB/s', '56 kb/s… anzi, 80 GB/s', '1 floppy/ms', 'più veloce della luce']),
     };
   });
   while (rows.some((r) => r.p < 100)) {
@@ -570,8 +570,8 @@ async function nuke(run: Run) {
   flash();
   sfx.boom();
   shake();
-  await joke('SCHERZO 😄', 'Nessun frigorifero è stato maltrattato.');
-  con.print('[i] Era tutto finto. Tranquillo, il mainframe sta bene.', 'c-dim');
+  await joke('DISINNESCATA', 'Il mainframe ha deciso di vivere. Nessun frigorifero è stato maltrattato.');
+  con.print('[i] Allarme rientrato. Il mainframe sta bene.', 'c-dim');
   game.complete('nuke');
 }
 

@@ -1,6 +1,6 @@
 appId: com.alessandroloverso.fakehacking
-productName: FakeHacking
-copyright: "Tutto finto © Alessandro Lo Verso"
+productName: Hacking
+copyright: "© 2026 Alessandro Lo Verso"
 directories:
   output: release
   buildResources: build
@@ -19,7 +19,7 @@ mac:
   hardenedRuntime: false
   artifactName: "${productName}-${version}-mac-${arch}.${ext}"
 dmg:
-  title: "FakeHacking ${version}"
+  title: "Hacking ${version}"
 win:
   target:
     - target: portable

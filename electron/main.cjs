@@ -29,7 +29,7 @@ function createWindow() {
     minHeight: 640,
     show: false,
     backgroundColor: '#1e1e1e',
-    title: 'FakeHacking',
+    title: 'Hacking',
     titleBarStyle: 'hidden',
     ...(isMac
       ? { trafficLightPosition: { x: 12, y: 9 } }

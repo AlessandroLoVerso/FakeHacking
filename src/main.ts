@@ -204,7 +204,7 @@ async function notificationLoop() {
 // --- Avvio -------------------------------------------------------------------
 
 async function start() {
-  consoleTerm.print(`FakeHacking 1.0 — mainframe pronto. Benvenuto, ${getSettings().hackerName}.`, 'c-ok');
+  consoleTerm.print(`Mainframe 1.0 — sistema pronto. Benvenuto, ${getSettings().hackerName}.`, 'c-ok');
   consoleTerm.print('Scrivi qualcosa e premi Invio. "help" per i comandi, F9 per l\'autopilota.', 'c-dim');
   if (getSettings().boot) {
     booting = true;
